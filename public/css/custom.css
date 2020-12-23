@@ -17,3 +17,16 @@
 {
 background-color: #ccc !important;
 }
+.trending-wrapper
+{
+	margin:20px;
+}
+.trending-img
+{
+height: 100px;	
+}
+.trending-items
+{
+	float: left;
+	width: 20%;
+}

@@ -29,6 +29,23 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
+
+
+<div class="trending-wrapper">
+	<h1>Trending Products
+	<div class="carousel-inner">
+  	@foreach($products as $key=>$p)
+    <div class="trending-items">
+      <img class="trending-img" src="{{asset('public/images/products/'.'/'.$p->gallery)}}"   >
+      <div class="">
+        <h3>{{$p->name}}</h3>
+        
+      </div>   
+    </div>
+     @endforeach
+  </div>
+</div>
+
 	 
 </div>
 @endsection
