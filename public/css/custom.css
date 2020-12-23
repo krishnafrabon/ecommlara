@@ -3,3 +3,17 @@
   height: 500px;
   padding-top: 100px;
 }
+.slider-img
+{
+	height: 400px !important;
+	width: 100%;
+}
+.custom-product
+{
+	 height: 600px;
+}
+
+.carousel-caption
+{
+background-color: #ccc !important;
+}
