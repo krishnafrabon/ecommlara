@@ -12,13 +12,16 @@
      
   </ul>
   <div class="carousel-inner">
+
   	@foreach($products as $key=>$p)
+
     <div class="carousel-item  {{$key == 0 ?'active':''}}">
-      <img class="slider-img" src="{{asset('public/images/products/'.'/'.$p->gallery)}}" alt="Los Angeles" width="100%" height="500">
+      <a href="{{url('productdetails'.'/'.$p->id)}}"><img class="slider-img" src="{{asset('public/images/products/'.'/'.$p->gallery)}}" alt="Los Angeles" width="100%" height="500">
       <div class="carousel-caption">
         <h3>{{$p->name}}</h3>
         <p>{{$p->description}}</p>
       </div>   
+  </a>
     </div>
      @endforeach
   </div>
@@ -34,11 +37,11 @@
 <div class="trending-wrapper">
 	<h1>Trending Products
 	<div class="carousel-inner">
-  	@foreach($products as $key=>$p)
+   	@foreach($products as $key=>$p)
     <div class="trending-items">
       <img class="trending-img" src="{{asset('public/images/products/'.'/'.$p->gallery)}}"   >
       <div class="">
-        <h3>{{$p->name}}</h3>
+        <h3><a href="{{url('productdetails'.'/'.$p->id)}}">{{$p->name}}</a></h3>
         
       </div>   
     </div>

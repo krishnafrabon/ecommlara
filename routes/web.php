@@ -23,3 +23,7 @@ Route::get('/login', function () {
 
 Route::post('/login',[UserController::class,'login']);
 Route::get('/product',[ProductController::class,'index']);
+Route::get('/productdetails/{id}',[ProductController::class,'productdetails']);
+Route::get('/search',[ProductController::class,'search']);
+
+Route::post('/addtocart',[ProductController::class,'addtocart']);
