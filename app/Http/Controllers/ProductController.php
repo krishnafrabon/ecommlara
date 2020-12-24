@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Cart;
 use Session;
-
+use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     function index()
@@ -45,5 +45,23 @@ class ProductController extends Controller
     {
     	$userId = Session::get('user')['id'];
     	return Cart::where('user_id',$userId)->count();
+    }
+    function cartlist()
+    {
+		$userId = Session::get('user')['id'];
+		$data =  DB::table('cart')
+		->join('products','cart.product_id','products.id')
+		->select('products.*','cart.id as cart_id')
+		->where('cart.user_id',$userId)
+		->get();
+		return view('cartlist',['products'=>$data]);
+
+    }
+    function removecart(Request $request)
+    {
+    	$userId = Session::get('user')['id'];
+    	$cart_id = $request->cart_id;
+    	Cart::destroy($cart_id);
+    	return redirect('/cartlist');
     }
 }

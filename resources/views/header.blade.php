@@ -28,7 +28,7 @@ $total = ProductController::cartItem();
     </form>
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-    	<a class="nav-link">Cart({{$total}})</a>      
+    	<a href="{{url('/cartlist')}}" class="nav-link">Cart({{$total}})</a>      
     </li>
     <!-- <li class="nav-item">
       <a class="nav-link">SignUp</a>
