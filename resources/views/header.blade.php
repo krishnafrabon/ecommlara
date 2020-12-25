@@ -16,7 +16,7 @@ $total = ProductController::cartItem();
         <a class="nav-link" href="{{url('/product')}}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Orders</a>
+        <a class="nav-link" href="{{url('/orders')}}">Orders</a>
       </li>
     <!--   <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -43,6 +43,7 @@ $total = ProductController::cartItem();
     @else
     <li class="nav-item">
       <a href="{{url('/login')}}" class="nav-link">Login</a>
+      <a href="{{url('/register')}}" class="nav-link">Register</a>
     </li>
     @endif
   </ul>

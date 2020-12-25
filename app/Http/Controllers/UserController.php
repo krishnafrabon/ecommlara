@@ -20,4 +20,17 @@ class UserController extends Controller
     	  	return redirect('/product');
     	  }
     }
+    function register(Request $request)
+    {
+        $user  = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+        $userId = $user->id;
+        $user = User::where('id',$userId)->first();
+
+        $request->session()->put('user',$user);
+        return redirect('/product');
+    }
 }

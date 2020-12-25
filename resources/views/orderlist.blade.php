@@ -4,24 +4,23 @@
  <div class="row">
  <div class="col-sm-8">
 <div class="trending-wrapper">
-	<h2>Cart List</h2>
-	<a href="{{url('/ordernow')}}">Order Now</a>
+	<h2>Orders List</h2>
+	<!-- <a href="{{url('/ordernow')}}">Order Now</a> -->
 	<div class="carousel-inner">
-   	@foreach($products as $key=>$p)
+   	@foreach($orders as $key=>$p)
     <div class="row  cart-list-devider">
     	<div class="col-sm-3">
     		<img class="trending-img" src="{{asset('public/images/products/'.'/'.$p->gallery)}}"   >
     	</div>
     	<div class="col-sm-3">
-    		 <h3><a href="{{url('productdetails'.'/'.$p->id)}}">{{$p->name}}</a></h3>
-    		 <h5><a href="{{url('productdetails'.'/'.$p->id)}}">{{$p->description}}</a></h5>
+    		 <h3>{{$p->name}}</h3>
+    		 <h5>Delivery Status : {{$p->status}}</h5>
+    		  <h5>Payment Status : {{$p->payment_status}}</h5>
+    		  <h5>Payment Method : {{$p->payment_method}}</h5>
+    		  <h5>Delivery Address : {{$p->address}}</h5>
     	</div>
     	<div class="col-sm-3">
-    		<form method="POST" action="{{url('/removecart')}}">
-    			@csrf
-    			<input type="hidden" name="cart_id" value="{{$p->cart_id}}">
-    			<button type="submit" class="btn btn-warning">Remove From Cart</button>	
-    		</form>
+    		 
     		
     	</div>
     </div>

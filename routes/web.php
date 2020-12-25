@@ -32,4 +32,9 @@ Route::get('/search',[ProductController::class,'search']);
 Route::post('/addtocart',[ProductController::class,'addtocart']);
 Route::get('/cartlist',[ProductController::class,'cartlist']);
 Route::post('/removecart',[ProductController::class,'removecart']);
+Route::get('/ordernow',[ProductController::class,'ordernow']);
+Route::post('/orderplace',[ProductController::class,'orderplace']);
+Route::get('/orders',[ProductController::class,'orders']);
+Route::view('/register','register');
+Route::post('/register',[UserController::class,'register']);
 
